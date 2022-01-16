@@ -1,40 +1,27 @@
 .wallet_form {
   align-items: center;
-  animation: add 1s forwards;
-  background-color: #25a570;
   display: flex;
   flex-direction: row;
   height: 100px;
   justify-content: flex-start;
   width: 100%;
-}
-
-@keyframes add {
-
-  to {
-    background-color: #414141;
-  }
+  background-color: #414141;
+  transition: background-color 1s ease;
 }
 
 .wallet_form-edit {
   align-items: center;
-  animation: edit 1s forwards;
-  background-color: #414141;
   display: flex;
   flex-direction: row;
   height: 100px;
   justify-content: flex-start;
   width: 100%;
+  background-color: #25a570;
+  transition: background-color 1s ease;
 }
 
-@keyframes edit {
-
-  to {
-    background-color: #25a570;
-  }
-}
-
-.wallet_form-edit label, .wallet_form label {
+.wallet_form-edit label,
+.wallet_form label {
   align-items: center;
   color: white;
   display: flex;
@@ -82,16 +69,14 @@
   width: 9rem;
 }
 
-@media ( max-width : 1215px ) {
-
+@media (max-width: 1215px) {
   .wallet_form-input {
     font-size: 0.9rem;
     margin-left: 3px;
   }
 }
 
-@media ( max-width : 1060px ) {
-
+@media (max-width: 1060px) {
   .wallet_form {
     flex-wrap: wrap;
     height: auto;

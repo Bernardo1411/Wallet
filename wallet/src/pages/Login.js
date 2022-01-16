@@ -1,18 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import PropTypes from "prop-types";
 
-import { auth } from '../actions';
+import { auth } from "../actions";
 
-import './Login.css';
+import "./Login.css";
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      senha: '',
+      email: "",
+      senha: "",
       redirect: false,
     };
 
@@ -60,29 +60,27 @@ class Login extends React.Component {
     if (redirect) return <Redirect to="/carteira" />;
     return (
       <div className="form_page_login">
-        <form onSubmit={ this.submitCredentialsHandler } className="login_form">
+        <form onSubmit={this.submitCredentialsHandler} className="login_form">
           <input
-            data-testid="email-input"
             className="input_login"
             type="email"
             id="email"
-            onChange={ (event) => {
+            onChange={(event) => {
               this.setEmail(event);
-            } }
+            }}
             required
           />
           <input
-            data-testid="password-input"
             className="input_login"
             type="password"
             id="password"
             minLength="6"
-            onChange={ (event) => {
+            onChange={(event) => {
               this.setPassword(event);
-            } }
+            }}
             required
           />
-          <button disabled={ !this.credentialValidationHandler() } type="submit">
+          <button disabled={!this.credentialValidationHandler()} type="submit">
             Entrar
           </button>
         </form>

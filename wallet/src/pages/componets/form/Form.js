@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './Form.css';
+import "./Form.css";
 
 function Form(props) {
   const {
@@ -18,17 +18,16 @@ function Form(props) {
 
   return (
     <form
-      onSubmit={ isEdit ? editRow : submitExpensesHandler }
-      className={ isEdit ? 'wallet_form-edit' : 'wallet_form' }
+      onSubmit={isEdit ? editRow : submitExpensesHandler}
+      className={isEdit ? "wallet_form-edit" : "wallet_form"}
     >
       <label htmlFor="value-input">
         Valor:
         <input
           type="number"
           id="value-input"
-          data-testid="value-input"
           name="value-input"
-          ref={ valueRef() }
+          ref={valueRef()}
           placeholder="0"
           min="0"
           required
@@ -40,9 +39,8 @@ function Form(props) {
         <input
           type="text"
           id="description-input"
-          data-testid="description-input"
           name="description"
-          ref={ descriptionRef() }
+          ref={descriptionRef()}
           required
           className="wallet_form-input"
         />
@@ -52,14 +50,13 @@ function Form(props) {
         <select
           name="currency"
           id="currency-input"
-          data-testid="currency-input"
           defaultValue="USD"
-          ref={ currencyRef() }
+          ref={currencyRef()}
           className="wallet_form-input"
         >
           {moedas.map((moeda) => (
-            <option key={ moeda } value={ moeda }>
-              { moeda }
+            <option key={moeda} value={moeda}>
+              {moeda}
             </option>
           ))}
         </select>
@@ -69,9 +66,8 @@ function Form(props) {
         <select
           name="method"
           id="method-input"
-          data-testid="method-input"
           defaultValue="Dinheiro"
-          ref={ paymentMethodRef() }
+          ref={paymentMethodRef()}
           className="wallet_form-input"
         >
           <option value="Dinheiro">Dinheiro</option>
@@ -84,9 +80,8 @@ function Form(props) {
         <select
           name="tag"
           id="tag-input"
-          data-testid="tag-input"
           defaultValue="Alimentação"
-          ref={ tagRef() }
+          ref={tagRef()}
           className="wallet_form-input"
         >
           <option value="Alimentação">Alimentação</option>
@@ -99,12 +94,10 @@ function Form(props) {
       <button
         type="submit"
         className={
-          isEdit
-            ? 'wallet_form-edit-button'
-            : 'wallet_form-add-button'
+          isEdit ? "wallet_form-edit-button" : "wallet_form-add-button"
         }
       >
-        { isEdit ? 'Editar despesa' : 'Adicionar despesa' }
+        {isEdit ? "Editar despesa" : "Adicionar despesa"}
       </button>
     </form>
   );

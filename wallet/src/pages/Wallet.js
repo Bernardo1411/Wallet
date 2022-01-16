@@ -1,27 +1,27 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import Header from './componets/header/Header';
-import Form from './componets/form/Form';
-import Table from './componets/table/Table';
-import Spinner from './componets/UI/spinner/Spinner';
+import Header from "./componets/header/Header";
+import Form from "./componets/form/Form";
+import Table from "./componets/table/Table";
+import Spinner from "./componets/UI/spinner/Spinner";
 
 import {
   fetchCurrencyData,
   addExpense,
   deleteExpense,
   editExpense,
-} from '../actions/index';
+} from "../actions/index";
 
-import './Wallet.css';
+import "./Wallet.css";
 
 class Wallet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isEdit: false,
-      id: '',
+      id: "",
     };
 
     this.valueRef = React.createRef();
@@ -41,15 +41,17 @@ class Wallet extends React.Component {
     fetchCurrencyDataHandler();
   }
 
-  showExpenses(despesas, currency = 'BRL') {
-    const despesaTotal = despesas.reduce((total, despesa) => (
-      total
-      + Number(despesa.value)
-      * Number(despesa.exchangeRates[`${despesa.currency}`].ask)
-    ), 0);
+  showExpenses(despesas, currency = "BRL") {
+    const despesaTotal = despesas.reduce(
+      (total, despesa) =>
+        total +
+        Number(despesa.value) *
+          Number(despesa.exchangeRates[`${despesa.currency}`].ask),
+      0
+    );
 
-    return despesaTotal.toLocaleString('en-us', {
-      style: 'currency',
+    return despesaTotal.toLocaleString("en-us", {
+      style: "currency",
       currency,
     });
   }
@@ -91,8 +93,8 @@ class Wallet extends React.Component {
     const { editExpense: editExpenseHandler } = this.props;
     editExpenseHandler(expenseData);
 
-    this.valueRef.current.value = '';
-    this.descriptionRef.current.value = '';
+    this.valueRef.current.value = "";
+    this.descriptionRef.current.value = "";
   }
 
   submitExpensesHandler(event) {
@@ -109,40 +111,39 @@ class Wallet extends React.Component {
     const { addExpense: addExpenseHandler } = this.props;
     addExpenseHandler(expenseData);
 
-    this.valueRef.current.value = '';
-    this.descriptionRef.current.value = '';
+    this.valueRef.current.value = "";
+    this.descriptionRef.current.value = "";
   }
 
   render() {
-    const { email, despesas, moedas, isFetching, currencyToExchange } = this.props;
+    const { email, despesas, moedas, isFetching, currencyToExchange } =
+      this.props;
 
     const { isEdit } = this.state;
 
     return (
       <div className="wallet_page">
-        {isFetching ? (
-          <Spinner />
-        ) : ''}
+        {isFetching ? <Spinner /> : ""}
         <Header
-          email={ email }
-          currencyToExchange={ currencyToExchange }
-          totalExpenses={ () => this.showExpenses(despesas) }
+          email={email}
+          currencyToExchange={currencyToExchange}
+          totalExpenses={() => this.showExpenses(despesas)}
         />
         <Form
-          isEdit={ isEdit }
-          editRow={ this.editRow }
-          submitExpensesHandler={ this.submitExpensesHandler }
-          moedas={ moedas }
-          valueRef={ () => this.valueRef }
-          descriptionRef={ () => this.descriptionRef }
-          currencyRef={ () => this.currencyRef }
-          paymentMethodRef={ () => this.paymentMethodRef }
-          tagRef={ () => this.tagRef }
+          isEdit={isEdit}
+          editRow={this.editRow}
+          submitExpensesHandler={this.submitExpensesHandler}
+          moedas={moedas}
+          valueRef={() => this.valueRef}
+          descriptionRef={() => this.descriptionRef}
+          currencyRef={() => this.currencyRef}
+          paymentMethodRef={() => this.paymentMethodRef}
+          tagRef={() => this.tagRef}
         />
         <Table
-          despesas={ despesas }
-          isEdit={ this.isEdit }
-          deleteRow={ this.deleteRow }
+          despesas={despesas}
+          isEdit={this.isEdit}
+          deleteRow={this.deleteRow}
         />
       </div>
     );
