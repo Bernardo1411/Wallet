@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #25a570;
+  --secondary-color: #414141;
+}
+
 html {
   height: 100%;
   width: 100%;

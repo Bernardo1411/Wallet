@@ -27,6 +27,7 @@ export const auth = (email) => (dispatch) => {
   dispatch({
     type: 'AUTH_SUCCESS',
     email,
+    isAuth: true,
   });
 };
 

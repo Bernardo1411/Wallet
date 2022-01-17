@@ -66,9 +66,11 @@ class Wallet extends React.Component {
   }
 
   isEdit(id) {
-    this.setState({
-      isEdit: true,
-      id,
+    this.setState((prevState) => {
+      return {
+        isEdit: !prevState.isEdit,
+        id,
+      };
     });
   }
 

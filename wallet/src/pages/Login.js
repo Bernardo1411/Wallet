@@ -60,6 +60,7 @@ class Login extends React.Component {
     if (redirect) return <Redirect to="/carteira" />;
     return (
       <div className="form_page_login">
+        <h2 className="form_page_title">Wallet</h2>
         <form onSubmit={this.submitCredentialsHandler} className="login_form">
           <input
             className="input_login"
