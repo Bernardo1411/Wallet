@@ -7,6 +7,11 @@ import { auth } from "../actions";
 
 import "./Login.css";
 
+import Indicator from "../assets/images/Indicator.png";
+import smartPhone from "../assets/images/Smartphone.png";
+import smartPhoneSecondary from "../assets/images/smartphonesecondary.png";
+import smartPhoneCalc from "../assets/images/smartphoneCalc.png";
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -60,31 +65,69 @@ class Login extends React.Component {
     if (redirect) return <Redirect to="/carteira" />;
     return (
       <div className="form_page_login">
-        <h2 className="form_page_title">Wallet</h2>
-        <form onSubmit={this.submitCredentialsHandler} className="login_form">
-          <input
-            className="input_login"
-            type="email"
-            id="email"
-            onChange={(event) => {
-              this.setEmail(event);
-            }}
-            required
-          />
-          <input
-            className="input_login"
-            type="password"
-            id="password"
-            minLength="6"
-            onChange={(event) => {
-              this.setPassword(event);
-            }}
-            required
-          />
-          <button disabled={!this.credentialValidationHandler()} type="submit">
-            Entrar
-          </button>
-        </form>
+        <div className="form_page_left">
+          <h2 className="form_page_title">Wallet</h2>
+          <form onSubmit={this.submitCredentialsHandler} className="login_form">
+            <div className="login_form_section">
+              <label className="label_login" htmlFor="email">
+                E-mail
+              </label>
+              <input
+                className="input_login"
+                type="email"
+                id="email"
+                onChange={(event) => {
+                  this.setEmail(event);
+                }}
+                required
+              />
+            </div>
+            <div className="login_form_section">
+              <label className="label_login" htmlFor="email">
+                Password
+              </label>
+              <input
+                className="input_login"
+                type="password"
+                id="password"
+                minLength="6"
+                onChange={(event) => {
+                  this.setPassword(event);
+                }}
+                required
+              />
+            </div>
+            <button
+              disabled={!this.credentialValidationHandler()}
+              type="submit"
+            >
+              Entrar
+            </button>
+            <div className="img_form_smartphoneCalc">
+              <img alt="smartphone calculator" src={smartPhoneCalc} />
+            </div>
+          </form>
+        </div>
+        <div className="form_page_right">
+          <div className="div_formpage_images">
+            <img
+              className="img_form_indicator"
+              alt="text indicator"
+              src={Indicator}
+            />
+            <img
+              className="img_form_smartphone"
+              alt="smartphone"
+              src={smartPhone}
+            />
+            <img
+              className="img_form_smartphoneSecondary"
+              alt="smartphone secondary"
+              src={smartPhoneSecondary}
+            />
+          </div>
+          <h2 className="form_page_title right">Wallet</h2>
+        </div>
       </div>
     );
   }
