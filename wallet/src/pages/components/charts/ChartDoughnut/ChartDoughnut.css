@@ -1,0 +1,28 @@
+.wallet_chart_doughnut {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--wallet-primary-color);
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  aspect-ratio: 0.9;
+}
+
+.wallet_chart_doughnut_content {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .wallet_chart_doughnut {
+    width: 95%;
+    aspect-ratio: 1.2;
+    min-height: 36.5vh;
+    max-height: 70vh;
+    margin-bottom: 20px;
+  }
+}

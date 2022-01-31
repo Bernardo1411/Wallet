@@ -1,0 +1,215 @@
+.wallet_form {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 250px;
+  width: 100%;
+  justify-content: flex-start;
+  transition: all 0.5s ease;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.wallet_form-edit {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 250px;
+  justify-content: flex-start;
+  width: 98%;
+  background-color: rgb(123, 116, 165, 0.5);
+  transition: all 0.5s ease;
+  flex-wrap: wrap;
+  margin: 5px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.wallet_form_content {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.wallet_form-edit label,
+.wallet_form label {
+  min-height: 50px;
+  align-items: center;
+  color: var(--auxiliary-color);
+  background-color: var(--wallet-primary-color);
+  display: flex;
+  font-weight: 500;
+  font-size: 1.2rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px;
+  padding: 0 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 50px;
+}
+
+.wallet_form-input {
+  border: solid 1px var(--auxiliary-color);
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--auxiliary-color);
+  height: 2.2rem;
+  margin-left: 7px;
+  padding: 0 10px;
+  background-color: var(--wallet-primary-color);
+}
+
+.wallet_form-input option {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.wallet_form-input-valor {
+  width: 120px;
+}
+
+.wallet_form_button {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_form-add-button {
+  background-color: var(--wallet-primary-color);
+  border: solid 1px var(--auxiliary-color);
+  border-radius: 50px;
+  color: var(--auxiliary-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  height: 8rem;
+  margin-left: 4px;
+  width: 9rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.2s ease;
+}
+
+.wallet_form-add-button:active {
+  border: solid 2px var(--auxiliary-color);
+  font-size: 1.2rem;
+  height: 7.5rem;
+  width: 8rem;
+  transition: all 0.2s ease;
+}
+
+.wallet_form-edit-button {
+  background-color: var(--secondary-color);
+  border: solid 1px var(--wallet-primary-color);
+  border-radius: 50px;
+  color: var(--wallet-primary-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  height: 8rem;
+  margin-left: 4px;
+  width: 9rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.2s ease;
+}
+
+.wallet_form-edit-button:active {
+  font-size: 1.2rem;
+  height: 7.5rem;
+  width: 8rem;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 1215px) {
+  .wallet_form-input {
+    font-size: 0.9rem;
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 700px) {
+  .wallet_form {
+    height: 50vh;
+    min-height: 450px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .wallet_form-edit {
+    height: 50vh;
+    min-height: 450px;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 20px;
+  }
+
+  .wallet_form_content {
+    height: 80%;
+    width: 100%;
+  }
+
+  .wallet_form-edit label,
+  .wallet_form label {
+    min-height: 40px;
+    font-size: 1rem;
+  }
+
+  .wallet_form-input {
+    font-size: 1rem;
+    height: 2rem;
+  }
+
+  .wallet_form-input option {
+    font-size: 1rem;
+  }
+
+  .wallet_form_button {
+    width: 100%;
+    height: 20%;
+    border-radius: 0 0 50px 50px;
+  }
+
+  .wallet_form-add-button {
+    border: none;
+    border-radius: 0px;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    transition: all 0.2s ease;
+  }
+
+  .wallet_form-add-button:active {
+    font-size: 1.2rem;
+    height: 90%;
+    width: 100%;
+    border: none;
+    transition: all 0.2s ease;
+  }
+
+  .wallet_form-edit-button {
+    border: none;
+    border-radius: 0 0 50px 50px;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    transition: all 0.2s ease;
+  }
+
+  .wallet_form-edit-button:active {
+    font-size: 1.2rem;
+    height: 90%;
+    width: 100%;
+    border: none;
+    transition: all 0.2s ease;
+  }
+}

@@ -1,0 +1,36 @@
+.wallet_header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+}
+
+.wallet_header h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 3px;
+  color: var(--auxiliary-color);
+  font-family: "Dongle";
+  text-shadow: 0 5.36px 2.896px #202020, 0 -1px 0.5px rgb(95, 95, 95);
+}
+
+.wallet_header h2:last-child {
+  margin-right: 15px;
+}
+
+.wallet_header .email_header {
+  margin-right: 60px;
+}
+
+@media (max-width: 700px) {
+  .wallet_header h2 {
+    font-size: 1.8rem;
+  }
+
+  .wallet_header .email_header {
+    margin-right: 30px;
+  }
+}

@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;700&family=Major+Mono+Display&display=swap');
 
 :root {
-  --primary-color: #6A53F4;
+  --primary-color: #6a53f4;
+  --secondary-color: rgb(123, 103, 243);
+  --wallet-primary-color: #25204d;
+  --wallet-secondary-color: rgb(123, 116, 165);
   --auxiliary-color: white;
   --background-color: linear-gradient(90.05deg, #6A53F4 36.95%, rgba(35, 0, 253, 0.19) 101.27%);
-  --secondary-color: #7B67F3;
-  
+  --wallet-background-color: linear-gradient(to right bottom, #1f1c3f, #1d193d, #1c1839, #171531);
+
   --main-font: "roboto";
 }
 
 html {
-  height: 100vh;
-  width: 100vw;
-  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 body {

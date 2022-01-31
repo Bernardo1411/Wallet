@@ -1,0 +1,145 @@
+.wallet_table {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 100%;
+}
+
+.wallet_table thead,
+tbody,
+tr {
+  display: inline-block;
+  width: 100%;
+}
+
+.wallet_table thead {
+  background-color: var(--wallet-secondary-color);
+  border: solid 1px var(--wallet-primary-color);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_table tr {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--wallet-secondary-color);
+}
+
+.wallet_table thead tr {
+  height: 100%;
+  border-radius: 50px 50px 0 0;
+}
+
+.wallet_table th {
+  color: var(--wallet-primary-color);
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 15%;
+  min-width: 40px;
+}
+
+.wallet_table th p {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  text-align: inherit;
+}
+
+.wallet_table tbody tr {
+  background-color: var(--wallet-primary-color);
+  color: var(--auxiliary-color);
+  margin-top: 2px;
+  height: auto;
+  min-height: 80px;
+}
+
+.wallet_table td {
+  text-align: center;
+  width: 15%;
+  min-width: 40px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.wallet_table-edite {
+  background-color: inherit;
+  border: none;
+  color: #ebb402;
+  font-weight: 500;
+  height: 25px;
+  margin-right: 4px;
+}
+
+.wallet_table-edite:hover {
+  color: var(--auxiliary-color);
+}
+
+.wallet_table-delete {
+  background-color: inherit;
+  border: none;
+  color: #ff4848;
+  font-weight: 500;
+  height: 25px;
+}
+
+.wallet_table-delete:hover {
+  color: var(--auxiliary-color);
+}
+
+@media (max-width: 900px) {
+  .wallet_table thead {
+    height: auto;
+    min-height: 60px;
+  }
+
+  .wallet_table thead tr th {
+    font-size: 1rem;
+  }
+
+  .wallet_table tbody {
+    word-wrap: break-word;
+  }
+
+  .wallet_table tbody tr td {
+    font-size: 1rem;
+  }
+
+  .wallet_table-edite {
+    font-size: 1rem;
+    margin: 2px;
+  }
+
+  .wallet_table-delete {
+    font-size: 1rem;
+    margin: 2px;
+  }
+}
+
+@media (max-width: 700px) {
+  .wallet_table thead tr th {
+    font-size: 0.8rem;
+  }
+
+  .wallet_table tbody {
+    word-wrap: break-word;
+  }
+
+  .wallet_table tbody tr td {
+    font-size: 0.8rem;
+  }
+
+  .wallet_table-edite {
+    font-size: 0.8rem;
+  }
+
+  .wallet_table-delete {
+    font-size: 0.8rem;
+  }
+}

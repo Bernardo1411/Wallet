@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import Header from "./componets/header/Header";
-import Form from "./componets/form/Form";
-import Table from "./componets/table/Table";
-import Spinner from "./componets/UI/spinner/Spinner";
+import Header from "./components/header/Header";
+import Form from "./components/form/Form";
+import Table from "./components/table/Table";
+import Charts from "./components/charts/Charts";
+import Spinner from "./components/UI/spinner/Spinner";
 
 import {
   fetchCurrencyData,
@@ -16,7 +17,7 @@ import {
 
 import "./Wallet.css";
 
-class Wallet extends React.Component {
+class Wallet extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,21 +42,6 @@ class Wallet extends React.Component {
     fetchCurrencyDataHandler();
   }
 
-  showExpenses(despesas, currency = "BRL") {
-    const despesaTotal = despesas.reduce(
-      (total, despesa) =>
-        total +
-        Number(despesa.value) *
-          Number(despesa.exchangeRates[`${despesa.currency}`].ask),
-      0
-    );
-
-    return despesaTotal.toLocaleString("en-us", {
-      style: "currency",
-      currency,
-    });
-  }
-
   deleteRow(id) {
     this.setState({
       isEdit: false,
@@ -66,12 +52,17 @@ class Wallet extends React.Component {
   }
 
   isEdit(id) {
-    this.setState((prevState) => {
-      return {
-        isEdit: !prevState.isEdit,
-        id,
-      };
-    });
+    if (
+      id === this.state.id ||
+      this.state.id === "" ||
+      (id !== this.state.id && !this.state.isEdit)
+    )
+      this.setState((prevState) => {
+        return {
+          isEdit: !prevState.isEdit,
+          id,
+        };
+      });
   }
 
   editRow(event) {
@@ -118,8 +109,15 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const { email, despesas, moedas, isFetching, currencyToExchange } =
-      this.props;
+    const {
+      email,
+      despesas,
+      moedas,
+      isFetching,
+      currencyToExchange,
+      totalExpenses,
+      totalExpensesArray,
+    } = this.props;
 
     const { isEdit } = this.state;
 
@@ -129,7 +127,11 @@ class Wallet extends React.Component {
         <Header
           email={email}
           currencyToExchange={currencyToExchange}
-          totalExpenses={() => this.showExpenses(despesas)}
+          totalExpenses={() => totalExpenses}
+        />
+        <Charts
+          expenses={this.props.despesas}
+          totalExpenses={totalExpensesArray}
         />
         <Form
           isEdit={isEdit}
@@ -155,6 +157,8 @@ class Wallet extends React.Component {
 Wallet.propTypes = {
   email: PropTypes.string.isRequired,
   despesas: PropTypes.arrayOf(PropTypes.object).isRequired,
+  totalExpenses: PropTypes.string.isRequired,
+  totalExpensesArray: PropTypes.arrayOf(PropTypes.object).isRequired,
   moedas: PropTypes.arrayOf(PropTypes.string).isRequired,
   isFetching: PropTypes.bool.isRequired,
   currencyToExchange: PropTypes.string.isRequired,
@@ -167,6 +171,8 @@ Wallet.propTypes = {
 const mapStateToProps = (state) => ({
   email: state.user.email,
   despesas: state.wallet.expenses,
+  totalExpenses: state.wallet.totalExpenses,
+  totalExpensesArray: state.wallet.totalExpensesArray,
   moedas: state.wallet.currencies,
   isFetching: state.wallet.isFetching,
   currencyToExchange: state.wallet.currencyToExchange,

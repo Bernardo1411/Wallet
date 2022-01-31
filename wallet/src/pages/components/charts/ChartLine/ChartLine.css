@@ -1,0 +1,33 @@
+.wallet_chart_line {
+  width: 62%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--wallet-primary-color);
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  aspect-ratio: 1.76;
+}
+
+.wallet_chart_line_content {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+  .wallet_chart_line {
+    width: 95%;
+    aspect-ratio: 1.4;
+    min-height: 28vh;
+    max-height: 55vh;
+  }
+
+  .wallet_chart_line_content {
+    width: 100%;
+    margin: 0;
+  }
+}

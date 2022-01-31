@@ -101,7 +101,7 @@ class Login extends React.Component {
               disabled={!this.credentialValidationHandler()}
               type="submit"
             >
-              Entrar
+              Enter
             </button>
             <div className="img_form_smartphoneCalc">
               <img alt="smartphone calculator" src={smartPhoneCalc} />

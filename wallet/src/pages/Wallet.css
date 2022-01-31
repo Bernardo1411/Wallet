@@ -2,7 +2,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: flex-start;
+  height: auto;
+  min-height: 100vh;
+  justify-content: space-between;
   width: 100%;
+  background: var(--wallet-background-color);
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../assets/images/layered-waves-haikei.svg');
 }

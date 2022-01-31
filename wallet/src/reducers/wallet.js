@@ -1,55 +1,72 @@
-import { alocador, formatArray } from './helpers/helpers';
+import { alocador, formatArray, showExpenses } from "../helpers/helpers";
 
 const initialState = {
   isFetching: false,
-  currencyToExchange: 'BRL',
+  currencyToExchange: "BRL",
   currencies: [],
   expenses: [],
+  totalExpenses: '0',
+  totalExpensesArray: [{despesaTotal: 0, date: `${new Date().getMonth()+1}/${new Date().getDate()} - ${new Date().getHours()}:${new Date().getMinutes()}`}],
 };
 
 const walletReducer = (state = initialState, action) => {
-  switch (action.type) {
-  case 'FETCH_CURRENCY':
+  if (action.type === "FETCH_CURRENCY") {
     return {
       ...state,
       currencies: state.currencies.concat(action.currencies),
     };
-  case 'ADD_EXPENSE':
+  } else if (action.type === "ADD_EXPENSE") {
+    const expenses = formatArray(
+      state.expenses.concat({
+        ...action.expense,
+        id: alocador(state.expenses, state.expenses.length),
+      })
+    );
+    const totalExpenses = showExpenses(expenses);
+    const totalExpensesArray = [...state.totalExpensesArray, showExpenses(expenses, true)];
     return {
       ...state,
-      expenses: formatArray(state.expenses
-        .concat({
-          ...action.expense,
-          id: alocador(state.expenses, state.expenses.length),
-        })),
+      expenses: expenses,
+      totalExpenses,
+      totalExpensesArray,
     };
-  case 'DELETE_EXPENSE':
+  } else if (action.type === "DELETE_EXPENSE") {
+    const expenses = state.expenses.filter(
+      (expense) => expense.id !== action.id
+    );
+    const totalExpenses = showExpenses(expenses);
+    const totalExpensesArray = [...state.totalExpensesArray, showExpenses(expenses, true)];
     return {
       ...state,
-      expenses: state.expenses.filter((expense) => expense.id !== action.id),
+      expenses,
+      totalExpenses,
+      totalExpensesArray,
     };
-  case 'EDIT_EXPENSE':
-    return {
-      ...state,
-      expenses: state.expenses.map((expense) => {
-        if (expense.id === action.expenseData.id) {
-          return {
-            ...expense,
-            ...action.expenseData,
-          };
-        }
+  } else if (action.type === "EDIT_EXPENSE") {
+    const expenses = state.expenses.map((expense) => {
+      if (expense.id === action.expenseData.id) {
+        return {
+          ...expense,
+          ...action.expenseData,
+        };
+      }
 
-        return expense;
-      }),
+      return expense;
+    });
+    const totalExpenses = showExpenses(expenses);
+    const totalExpensesArray = [...state.totalExpensesArray, showExpenses(expenses, true)];
+    return {
+      ...state,
+      expenses,
+      totalExpenses,
+      totalExpensesArray,
     };
-  case 'IS_FETCHING':
+  } else if (action.type === "IS_FETCHING") {
     return {
       ...state,
       isFetching: action.isFetching,
     };
-  default:
-    return state;
-  }
+  } else return state;
 };
 
 export default walletReducer;

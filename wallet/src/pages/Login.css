@@ -82,8 +82,8 @@
 }
 
 .form_page_login button:hover {
-  height: 8rem;
-  width: 8rem;
+  height: 6.5rem;
+  width: 6.5rem;
   transition: all 0.5s ease;
 }
 
