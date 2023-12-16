@@ -37,13 +37,13 @@ const Chart = (props) => {
       legend: {
         position: "bottom",
         labels: {
-          color: "#fff",
+          color: "#000",
         }
       },
       title: {
         display: true,
         text: "Total Expenses Over Time",
-        color: "#fff",
+        color: "#000",
         font: {
           family: 'roboto',
           size: '16px'
@@ -53,20 +53,20 @@ const Chart = (props) => {
     scales: {
       y: {
         ticks: {
-          color: "#fff",
+          color: "#000",
           font: {
             size: 14,
           },
         },
         grid: {
-          color: 'rgb(123, 116, 165, 0.2)',
-          lineWidth: 3,
+          color: '#ABAAAA',
+          lineWidth: 1,
         },
         min: 0,
       },
       x: {
         ticks: {
-          color: "#fff",
+          color: "#000",
           font: {
             size: 14,
           },
@@ -81,9 +81,9 @@ const Chart = (props) => {
       {
         label: "Total Expense",
         data: totalExpenses.map((expense) => expense.despesaTotal),
-        borderColor: "rgba(187, 179, 234, 0.5)",
-        backgroundColor: "#7b74a5",
-        borderWidth: 10,
+        borderColor: "#000",
+        backgroundColor: "#000",
+        borderWidth: 2,
       },
     ],
   };

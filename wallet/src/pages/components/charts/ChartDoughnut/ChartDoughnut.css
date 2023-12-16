@@ -3,26 +3,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--wallet-primary-color);
-  border-radius: 50px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: var(--form-dashboarsd-background-color);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   aspect-ratio: 0.9;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .wallet_chart_doughnut_content {
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .wallet_chart_doughnut {
-    width: 95%;
+    width: 100%;
     aspect-ratio: 1.2;
     min-height: 36.5vh;
     max-height: 70vh;
     margin-bottom: 20px;
+  }
+
+  .wallet_chart_doughnut_content {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .wallet_chart_doughnut {
+    width: 100%;
+    min-width: 400px;
+    aspect-ratio: 1.2;
+    min-height: 36.5vh;
+    max-height: 70vh;
+    margin-bottom: 20px;
+  }
+
+  .wallet_chart_doughnut_content {
+    width: 80%;
   }
 }

@@ -100,7 +100,7 @@ function Form(props) {
             isEdit ? "wallet_form-edit-button" : "wallet_form-add-button"
           }
         >
-          {isEdit ? "Edit" : "Add"}
+          {isEdit ? "Edit" : "Confirm"}
         </button>
       </div>
     </form>

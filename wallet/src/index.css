@@ -8,8 +8,10 @@
   --auxiliary-color: white;
   --background-color: linear-gradient(90.05deg, #6A53F4 36.95%, rgba(35, 0, 253, 0.19) 101.27%);
   --wallet-background-color: linear-gradient(to right bottom, #1f1c3f, #1d193d, #1c1839, #171531);
+
   --login-background-color: linear-gradient(90deg, #4205C3 0.56%, #5394F4 36.95%, #201A4D 101.27%);
   --main-text-color: linear-gradient(90deg, #71A2EB -2.19%, #FFF 89.97%);
+  --form-dashboarsd-background-color: linear-gradient(90deg, rgba(247, 247, 247, 0.75) 0.07%, rgba(223, 241, 244, 0.75) 99.93%);
 
   --main-font: "roboto";
 }

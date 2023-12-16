@@ -19,13 +19,13 @@ const ChartDoughnut = (props) => {
     plugins: {
       legend: {
         labels: {
-          color: "#fff",
+          color: "#000",
         },
       },
       title: {
         display: true,
         text: "Total Expense per Tag",
-        color: "#fff",
+        color: "#000",
         font: {
           family: 'roboto',
           size: '16px'
@@ -41,17 +41,17 @@ const ChartDoughnut = (props) => {
         label: "Expenses",
         data: [...totalValue],
         backgroundColor: [
-          "rgba(228, 224, 255, 0.5)",
-          "rgba(153, 19, 19, 0.5)",
-          "rgba(131, 170, 23, 0.5)",
-          "rgba(128, 111, 219, 0.5)",
-          "rgba(177, 87, 14, 0.5)",
+          "rgba(228, 224, 255, 1)",
+          "rgba(153, 19, 19, 1)",
+          "rgba(131, 170, 23, 1)",
+          "rgba(000, 000, 000, 1)",
+          "rgba(177, 87, 14, 1)",
         ],
         borderColor: [
           "rgba(228, 224, 255, 1)",
           "rgba(153, 19, 19, 1)",
           "rgba(131, 170, 23, 1)",
-          "rgba(128, 111, 219, 1)",
+          "rgba(000, 000, 000, 1)",
           "rgba(177, 87, 14, 1)",
         ],
         borderWidth: 0,

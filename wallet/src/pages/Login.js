@@ -7,8 +7,6 @@ import { auth } from "../actions";
 
 import "./Login.css";
 
-import Indicator from "../assets/images/Indicator.png";
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -62,15 +60,8 @@ class Login extends React.Component {
     if (redirect) return <Redirect to="/carteira" />;
     return (
       <div className="form_page_login">
+        <h2 className="form_page_title right">Wallet</h2>
         <div className="form_page_left">
-          {/* <div className="div_formpage_images">
-            <img
-              className="img_form_indicator"
-              alt="text indicator"
-              src={Indicator}
-            />
-          </div> */}
-          <h2 className="form_page_title right">Wallet</h2>
           <div className="div_important">
             <h1>
               Expanses

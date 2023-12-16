@@ -124,6 +124,7 @@ class Wallet extends React.PureComponent {
     return (
       <div className="wallet_page">
         {isFetching ? <Spinner /> : ""}
+        <h2 className="dashboard_title right">Wallet</h2>
         <Header
           email={email}
           currencyToExchange={currencyToExchange}
