@@ -8,9 +8,6 @@ import { auth } from "../actions";
 import "./Login.css";
 
 import Indicator from "../assets/images/Indicator.png";
-import smartPhone from "../assets/images/Smartphone.png";
-import smartPhoneSecondary from "../assets/images/smartphonesecondary.png";
-import smartPhoneCalc from "../assets/images/smartphoneCalc.png";
 
 class Login extends React.Component {
   constructor(props) {
@@ -66,8 +63,28 @@ class Login extends React.Component {
     return (
       <div className="form_page_login">
         <div className="form_page_left">
-          <h2 className="form_page_title">Wallet</h2>
+          {/* <div className="div_formpage_images">
+            <img
+              className="img_form_indicator"
+              alt="text indicator"
+              src={Indicator}
+            />
+          </div> */}
+          <h2 className="form_page_title right">Wallet</h2>
+          <div className="div_important">
+            <h1>
+              Expanses
+            </h1>
+            <h2>&</h2>
+            <h1>
+              Exchange
+            </h1>
+              <h3>All in one place</h3>
+          </div>
+        </div>
+        <div className="form_page_right">
           <form onSubmit={this.submitCredentialsHandler} className="login_form">
+            <h2>Let's start!</h2>
             <div className="login_form_section">
               <label className="label_login" htmlFor="email">
                 E-mail
@@ -101,32 +118,9 @@ class Login extends React.Component {
               disabled={!this.credentialValidationHandler()}
               type="submit"
             >
-              Enter
+              Login
             </button>
-            <div className="img_form_smartphoneCalc">
-              <img alt="smartphone calculator" src={smartPhoneCalc} />
-            </div>
           </form>
-        </div>
-        <div className="form_page_right">
-          <div className="div_formpage_images">
-            <img
-              className="img_form_indicator"
-              alt="text indicator"
-              src={Indicator}
-            />
-            <img
-              className="img_form_smartphone"
-              alt="smartphone"
-              src={smartPhone}
-            />
-            <img
-              className="img_form_smartphoneSecondary"
-              alt="smartphone secondary"
-              src={smartPhoneSecondary}
-            />
-          </div>
-          <h2 className="form_page_title right">Wallet</h2>
         </div>
       </div>
     );
