@@ -24,6 +24,7 @@ const dataFetching = async (dispatch) => {
 };
 
 export const auth = (email) => (dispatch) => {
+  window.sessionStorage.setItem('isAuth', true);
   dispatch({
     type: 'AUTH_SUCCESS',
     email,

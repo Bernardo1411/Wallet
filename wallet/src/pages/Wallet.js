@@ -108,6 +108,11 @@ class Wallet extends React.PureComponent {
     this.descriptionRef.current.value = "";
   }
 
+  exit() {
+    window.location.href = '/';
+    window.sessionStorage.removeItem('isAuth');
+  }
+
   render() {
     const {
       email,
@@ -125,6 +130,7 @@ class Wallet extends React.PureComponent {
       <div className="wallet_page">
         {isFetching ? <Spinner /> : ""}
         <h2 className="dashboard_title right">Wallet</h2>
+        <button className="exit" type="button" onClick={this.exit}>Exit</button>
         <Header
           email={email}
           currencyToExchange={currencyToExchange}

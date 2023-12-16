@@ -16,7 +16,7 @@ function App() {
     </Switch>
   );
 
-  if (isAuth) {
+  if (isAuth || window.sessionStorage.getItem('isAuth')) {
     content = (
       <Switch>
         <Route path="/carteira" component={Wallet} />
