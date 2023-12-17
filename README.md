@@ -10,14 +10,17 @@ MyWallet is an application that calculates expenses and then converts the actual
 
 In this application, the user does not need to create a user, because there is no backend. To acess the wallet page, just insert a valid email (can be a fake one) and insert any password with six characters or more.
 
-## Layout mobile
-<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/login_page_mobile.png" alt="initial_mobile" width="250" height="500" /> <img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/wallet_page1_mobile.png" alt="wallet_mobile" width="250" height="500" />
-<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/wallet_page2_mobile.png" alt="wallet_mobile" width="250" height="500" />
-
 ## Layout web
-![Web 1](https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/login_page.png)
-![Web 2](https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/wallet_page1.png)
-![Web 3](https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/wallet_page2.png)
+<div>  
+<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/home.png" alt="initial_mobile" width="400"/>
+<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/dashboard.png" alt="initial_mobile" width="400"/>
+</div>
+<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/home.gif" alt="initial_mobile" width="700"/>
+<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/dashboard_add.gif" alt="initial_mobile" width="700"/>
+<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/dashboard_edit.gif" alt="initial_mobile" width="700"/>
+
+## Layout mobile
+<img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/home_mobile.png" alt="initial_mobile" width="250" height="500" /> <img src="https://github.com/Bernardo1411/Wallet/blob/master/wallet/src/assets/images/dashboard_mobile.png" alt="wallet_mobile" width="250" height="500" />
 
 # technologies
 ## Front end
