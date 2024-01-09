@@ -53,4 +53,4 @@ npm start
 Bernardo Fonseca Andrade de Lima
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bernardo-fonseca-97926811b/)
-[![My website](https://img.shields.io/badge/website-070707?style=for-the-badge&logo=About.me&logoColor=white)](https://bernardodev-bernardo1411.vercel.app/)
+[![My website](https://img.shields.io/badge/website-070707?style=for-the-badge&logo=About.me&logoColor=6D51C4)](https://bernardodev-bernardo1411.vercel.app/)
